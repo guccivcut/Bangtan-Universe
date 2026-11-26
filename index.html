@@ -164,7 +164,7 @@
     }
 
     .mission-link .smallaf  {
-      fontsize: 0.5rem;
+      font-size: 0.5rem;
       line-height: 1.5;
       color: #d9b8c9;}
 
@@ -464,7 +464,7 @@
       justify-content: flex-end;
     }
 
-    ..close {
+    .close {
   color: #ffe1eb;
   background: transparent;
   border: none;
@@ -547,8 +547,9 @@
         Stream every song on ARIRANG to
         <strong>500 million Spotify streams.</strong>
 
-         <small class = smallaf>No studio album on Spotify currently has every single song over 500 million streams.
-         Let's give this record to BTS.</smallaf>
+         <small class="smallaf">
+           No studio album on Spotify currently has every single song over 500 million streams.
+         Let's give this record to BTS.</small>
         <small>Click here to explore Chapter 01</small>
       </a>
 
@@ -661,7 +662,7 @@
           class="close"
           id="closeDialog"
           type="button"
-          arial-label="Close Constellation">
+          aria-label="Close Constellation">
           ✕
         </button>
       </div>
@@ -706,8 +707,8 @@
 
     const streamReport = {
 
-      preview: true,
-      checkedOn: 11/25/2026,
+      preview: false,
+      checkedOn: '2026-11-25',
 
       counts: {
         'Body to Body': 447187186,
@@ -1001,7 +1002,7 @@
         );
 
         el('reportNotice').textContent =
-          `Spotify stream numbers are updated every two days. Last updated: 11/25/2026 ${when}.`;
+          `Spotify stream numbers are updated every two days. Last updated: ${when}.`;
 
       }
 
@@ -1299,8 +1300,7 @@
         to
         <strong>${millions(current.goal)} Spotify streams.</strong>
 
-        <small>
-        No studio album on Spotify currently has every single song over 500 million streams.
+<small class="smallaf"> No studio album on Spotify currently has every single song over 500 million streams.
          Let's give this record to BTS.
    </small>
 
@@ -1421,7 +1421,7 @@
         starPoints(song.pattern.paths).length;
 
 
-      el('dialogChapter').textContent =
+      el('dialogChapter').textContent = '';
 
 
       el('dialogTitle').textContent =
