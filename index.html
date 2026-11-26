@@ -459,14 +459,17 @@
       justify-content: flex-end;
     }
 
-    .close {
-      color: #ffe1eb;
-      cursor: pointer;
-      padding: 8px 15px;
-      border: 1px solid rgba(255,168,194,.5);
-      border-radius: 11px;
-      background: rgba(126,36,75,.4);
-    }
+    ..close {
+  color: #ffe1eb;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 4px 8px;
+  font-size: 1.5rem;
+  cursor: pointer;}
+
+.close:hover {
+  color: #ff8fb3;}
 
     .dialog-inner h2 {
       margin: 7px 0;
@@ -652,8 +655,9 @@
         <button
           class="close"
           id="closeDialog"
-          type="button">
-          Close ✕
+          type="button"
+          arial-label="Close Constellation">
+          ✕
         </button>
       </div>
 
@@ -1413,9 +1417,6 @@
 
 
       el('dialogChapter').textContent =
-
-        `CHAPTER ${String(chapter.number).padStart(2,'0')}
-         · TRACK ${String(index+1).padStart(2,'0')}`;
 
 
       el('dialogTitle').textContent =
