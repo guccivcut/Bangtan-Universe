@@ -157,16 +157,16 @@
 
     .mission-link strong { color: #ffe1e9; }
 
-    .mission-link yoongi {
+    .mission-link small {
       display: block;
       margin-top: 8px;
       color: #f6b9cf;
     }
 
-    .mission-link .jimin {
-      font size: 0.7rem;
+    .mission-link .smallaf  {
+      fontsize: 0.7rem;
       line-height: 1.5;
-      color: #d9b8c9; }
+      color: #d9b8c9;}
 
     .major {
       max-width: 260px;
@@ -179,7 +179,7 @@
       height: 100%;
     }
 
-    .yoongi {
+    .small {
       color: var(--muted);
       font-size: .83rem;
     }
@@ -547,10 +547,9 @@
         Stream every song on ARIRANG to
         <strong>500 million Spotify streams.</strong>
 
-         <yoongi class= "jimin">
-           No studio album on Spotify currently has every single song over 500 million streams.
-         Let's give this record to BTS.</yoongi class= "jimin">
-        <yoongi>Click here to explore Chapter 01</yoongi>
+         <small class = smallaf>No studio album on Spotify currently has every single song over 500 million streams.
+         Let's give this record to BTS.</small>
+        <small>Click here to explore Chapter 01</small>
       </a>
 
       <div id="Seven"
@@ -558,7 +557,7 @@
            aria-label="OT7 chapter completion constellation">
       </div>
 
-      <p class="yoongi">
+      <p class="small">
         Each completed song lights up half an OT7 constellation.
       </p>
 
@@ -570,7 +569,7 @@
       <div class="meter">
         <div class="meter-fill" id="overallBar"></div>
       </div>
-      <p class="yoongi">
+      <p class="small">
         Overall progress here is calculated by averaging how close each of the 14 songs
         is to 500M streaming goals.
       </p>
@@ -613,7 +612,7 @@
 
       <h2>The next chapter awaits</h2>
 
-      <p class="yoongi">
+      <p class="small">
         When a new mission begins, it takes the top spot
         and completed chapters move into the archive.
       </p>
@@ -691,7 +690,7 @@
 
       </div>
 
-      <p class="yoongi" id="dialogStatus"></p>
+      <p class="small" id="dialogStatus"></p>
 
     </div>
 
@@ -1247,9 +1246,9 @@
 
           </div>
 
-          <yoongi class="hint">
+          <small class="hint">
             Click to enlarge ✧
-          </yoongi>
+          </small>
 
         </button>
 
@@ -1300,15 +1299,15 @@
         to
         <strong>${millions(current.goal)} Spotify streams.</strong>
 
-        <yoongi>
+        <small>
         No studio album on Spotify currently has every single song over 500 million streams.
          Let's give this record to BTS.
-   </yoongi>
+   </small>
 
-        <yoongi>
+        <small>
           Click here to explore Chapter
           ${String(current.number).padStart(2,'0')} 
-        </yoongi>
+        </small>
 
       `;
 
