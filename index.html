@@ -1250,6 +1250,10 @@
         })
       ).join('');
 
+      const smallerPattern =
+        label.includes('Ursa Major')||
+        label.includes('Scorpius');
+      
       const stars = points.map(
         (p,i) => littleStar(
           p,
@@ -1266,7 +1270,11 @@
       return `
 
         <svg
-          viewBox="${big ? '0 0 330 220' : '0 0 300 155'}"
+          viewBox="${big 
+                     ?'0 0 330 220' 
+                     : smallerPattern
+                     ?'-15 -7.75 330 170.5'
+                     :'0 0 300 155'}"
           role="img"
           aria-label="${safeLabel}">
 
