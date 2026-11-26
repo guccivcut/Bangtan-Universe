@@ -1206,6 +1206,28 @@
 
       const points = starPoints(paths);
 
+      // Give Big Dipper and Scorpius extra room
+const needsMoreRoom =
+  label.includes('Ursa Major') ||
+  label.includes('Scorpius');
+
+const xValues = points.map(p => p[0]);
+const yValues = points.map(p => p[1]);
+
+const minX = Math.min(...xValues);
+const maxX = Math.max(...xValues);
+const minY = Math.min(...yValues);
+const maxY = Math.max(...yValues);
+
+const padding = 24;
+
+const fittedViewBox = [
+  minX - padding,
+  minY - padding,
+  maxX - minX + padding * 2,
+  maxY - minY + padding * 2
+].join(' ');
+
       const totalLit =
         Math.min(1, Math.max(0, fraction)) *
         points.length;
@@ -1272,8 +1294,8 @@
         <svg
           viewBox="${big 
                      ?'0 0 330 220' 
-                     : smallerPattern
-                     ?'-15 -7.75 330 170.5'
+                     : needsMoreRoom
+                     ? fittedViewBox
                      :'0 0 300 155'}"
           role="img"
           aria-label="${safeLabel}">
