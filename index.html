@@ -329,14 +329,24 @@
 
     .twinkle {
       animation:
-        twinkle var(--speed,3s) ease-in-out infinite;
+        starGlow var(--speed, 1.5s) ease-in-out infinite;
       animation-delay: var(--offset,0s);
     }
 
-    @keyframes twinkle {
-      0%,100% { opacity: .60; }
-      45% { opacity: 1; }
-      70% { opacity: .78; }
+    @keyframes starGlow {
+      0%,100% { opacity: .30;
+               filter: drop-shadow(0 0 1px #e45a83);
+              }
+      30% { opacity: 1;
+         filter: drop-shadow(0 0 8px #ffd6e3);
+          }
+      55% { opacity: .55;
+          filter: drop-shadow(0 0 2px #e45a83);
+          }
+      75% {
+    opacity: .95;
+    filter: drop-shadow(0 0 6px #ffb4ce);
+      }
     }
 
     .archive {
@@ -1011,7 +1021,7 @@
       const twinkle = lit > 0 ? 'twinkle' : '';
 
       const speed = (
-        2.6 + i * .47 % 2.4
+        1.1 + i * .37 % .9
       ).toFixed(2);
 
       const offset = (
